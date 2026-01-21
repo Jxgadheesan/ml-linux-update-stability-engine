@@ -15,11 +15,11 @@ This project focuses on analyzing historical Linux update behavior and building 
 
 ## 🧠 What This Project Does
 
-1. Reads real Linux update logs from the system
-2. Extracts package and system update information
-3. Stores structured update data in a SQLite database
-4. Builds features required for machine learning
-5. Trains a classification model when enough data exists
+1. Reads real Linux update logs from the system  
+2. Extracts package and system update information  
+3. Stores structured update data in a SQLite database  
+4. Builds features required for machine learning  
+5. Trains a classification model when enough data exists  
 
 The project uses real system data, not fake or pre-made datasets.
 
@@ -27,45 +27,44 @@ The project uses real system data, not fake or pre-made datasets.
 
 ## 🏗️ System Architecture
 
-Linux System → Pacman Logs (/var/log/pacman.log) → Data Collection Layer → SQLite Database → Feature Engineering → Machine Learning Pipeline
+Linux System → Pacman Logs (`/var/log/pacman.log`) → Data Collection Layer → SQLite Database → Feature Engineering → Machine Learning Pipeline
 
 ---
 
 ## ⚙️ Technologies Used
 
-- Python – core programming language
-- SQLite – structured data storage
-- Pandas & NumPy – data processing
-- Scikit-learn – machine learning
-- Linux (pacman) – real system data source
+- Python – core programming language  
+- SQLite – structured data storage  
+- Pandas & NumPy – data processing  
+- Scikit-learn – machine learning  
+- Linux (pacman) – real system data source  
 
 ---
 
 ## 📂 Project Structure
 
-ml-linux-update-stability-engine/
-├── src/
-│   ├── collectors/     # Collects update data from Linux logs
-│   ├── features/       # Feature engineering logic
-│   ├── models/         # Machine learning model
-│   ├── utils/          # Logging utilities
-│   └── main.py         # Pipeline entry point
-├── sql/                # Database schema
-├── notebooks/          # Exploratory analysis
-├── requirements.txt
-└── README.md
+- **src/**
+  - **collectors/** – collects update data from Linux logs  
+  - **features/** – feature engineering logic  
+  - **models/** – machine learning model  
+  - **utils/** – logging utilities  
+  - **main.py** – pipeline entry point  
+- **sql/** – database schema  
+- **notebooks/** – exploratory analysis  
+- **requirements.txt** – project dependencies  
+- **README.md** – project documentation  
 
 ---
 
 ## ▶️ How to Run the Project
 
-Activate the virtual environment:
+Activate the virtual environment:  
 source .venv/bin/activate.fish
 
-Collect real Linux update data:
+Collect real Linux update data:  
 python -m src.collectors.pacman
 
-Run the machine learning pipeline:
+Run the machine learning pipeline:  
 python -m src.main
 
 If there is not enough historical update data, the system safely skips ML training instead of failing.
@@ -78,7 +77,7 @@ Problem Type: Classification
 Model Used: Random Forest  
 
 Features:
-- Number of packages updated
+- Number of packages updated  
 - Kernel update indicator  
 
 Output:
@@ -90,21 +89,21 @@ The ML pipeline is designed to activate automatically when sufficient historical
 
 ## 🔍 Key Highlights
 
-- Uses real Linux system update logs
-- End-to-end ML-ready pipeline
-- Handles low-data scenarios safely
-- Modular and explainable design
-- Focused on system-level data engineering
+- Uses real Linux system update logs  
+- End-to-end ML-ready pipeline  
+- Handles low-data scenarios safely  
+- Modular and explainable design  
+- Focused on system-level data engineering  
 
 ---
 
 ## 🚀 Future Improvements
 
-- Time-series analysis of update history
-- Support for multiple Linux distributions
-- Background monitoring service
-- Improved risk scoring logic
-- Visualization dashboard
+- Time-series analysis of update history  
+- Support for multiple Linux distributions  
+- Background monitoring service  
+- Improved risk scoring logic  
+- Visualization dashboard  
 
 ---
 
@@ -112,4 +111,4 @@ The ML pipeline is designed to activate automatically when sufficient historical
 
 **Jagadheesan (Jd)**  
 GitHub: https://github.com/jxgadheesan  
-Focus Areas: Linux, Python, Machine Learning, System-Level Projects
+Interests: Linux, Python, Machine Learning, System-Level Engineering
