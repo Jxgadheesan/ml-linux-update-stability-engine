@@ -1,19 +1,29 @@
 # ML-Based Linux Update Stability Engine
 
-This project builds a machine learning system that predicts the stability risk of Linux system updates
-by analyzing package dependency graphs, kernel changes, system metadata, and historical update failures.
+This project analyzes Linux system updates and predicts whether an update is risky using machine learning.
 
-## Goal
-To help Linux users and system administrators assess update risk *before* applying system updates,
-especially in rolling-release environments.
+## Problem Statement
+Linux updates, especially on rolling-release distributions, can introduce instability. This project aims to analyze update patterns and classify risky updates using historical data.
 
-## Core Ideas
-- Model system update stability as a classification and regression problem
-- Learn from historical update failures and system states
-- Quantify risk instead of relying on anecdotal experience
+## System Architecture
+1. Data Collection Layer – parses pacman logs
+2. Storage Layer – structured SQLite database
+3. Feature Engineering Layer – extracts ML features
+4. ML Layer – classifies update risk
 
-## Tech Stack
-- Python, Pandas, NumPy
-- SQL (update & dependency tracking)
-- Machine Learning (classification & regression)
-- Optional Deep Learning for temporal patterns
+## Technologies Used
+- Python
+- SQLite
+- Pandas, NumPy
+- Scikit-learn
+
+## Workflow
+1. Collect system update data
+2. Store package changes
+3. Generate features
+4. Train ML model
+
+## Future Enhancements
+- Time-series modeling
+- Multi-distro support
+- Background daemon service
